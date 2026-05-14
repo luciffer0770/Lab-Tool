@@ -24,8 +24,8 @@ Open the app, then **Upload A2L**. Parsing runs entirely in the browser; no serv
 ### Optional API mode
 
 ```bash
-cd /workspace/backend
-export PYTHONPATH=/workspace/backend
+cd backend
+export PYTHONPATH="$PWD"
 python3 -m uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 ```
 
@@ -34,6 +34,16 @@ In `frontend/.env.local`:
 ```bash
 VITE_API_URL=http://localhost:8000
 ```
+
+## GitHub Pages
+
+The workflow [.github/workflows/deploy-github-pages.yml](.github/workflows/deploy-github-pages.yml) builds the SPA with the correct asset base path and publishes `frontend/dist`.
+
+1. Merge this workflow into **`main`** (GitHub Actions only picks up workflows from the default branch for automatic runs).
+2. In the repository on GitHub: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
+3. After the workflow succeeds, open **`https://<your-username>.github.io/<repository-name>/`** (for this repo: `https://luciffer0770.github.io/Lab-Tool/` once your username matches).
+
+You can also run **Actions → Deploy to GitHub Pages → Run workflow** manually on `main` after the file exists there.
 
 ## Deploy (static hosting)
 
