@@ -37,13 +37,14 @@ VITE_API_URL=http://localhost:8000
 
 ## GitHub Pages
 
-The workflow [.github/workflows/deploy-github-pages.yml](.github/workflows/deploy-github-pages.yml) builds the SPA with the correct asset base path and publishes `frontend/dist`.
+The workflow [.github/workflows/deploy-github-pages.yml](.github/workflows/deploy-github-pages.yml) builds the SPA and publishes `frontend/dist`.
 
-1. Merge this workflow into **`main`** (GitHub Actions only picks up workflows from the default branch for automatic runs).
-2. In the repository on GitHub: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
-3. After the workflow succeeds, open **`https://<your-username>.github.io/<repository-name>/`** (for this repo: `https://luciffer0770.github.io/Lab-Tool/` once your username matches).
+1. In the repository on GitHub: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
+2. Push to a **`cursor/*`** branch (for example `cursor/a2l-engineering-workbench-a150`); the workflow runs automatically. You can also use **Actions → Deploy to GitHub Pages → Run workflow** (the list often reflects workflows on the default branch—if you do not see it, use a push to your `cursor/**` branch to deploy).
 
-You can also run **Actions → Deploy to GitHub Pages → Run workflow** manually on `main` after the file exists there.
+3. Open **`https://<your-username>.github.io/<repository-name>/`** (for this repo: `https://luciffer0770.github.io/Lab-Tool/`).
+
+To deploy from other branch names, add them under `on.push.branches` in the workflow file (or use a `cursor/**`-style name).
 
 ## Deploy (static hosting)
 

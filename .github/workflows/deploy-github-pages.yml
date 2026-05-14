@@ -1,8 +1,11 @@
 name: Deploy to GitHub Pages
 
 on:
+  # Deploy from Cursor feature branches (no merge to main required).
+  # Add your own branch names here if they do not match `cursor/**`.
   push:
-    branches: [main]
+    branches:
+      - 'cursor/**'
   workflow_dispatch:
 
 permissions:
