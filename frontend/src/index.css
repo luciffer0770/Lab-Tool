@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  @apply bg-surface-main text-ink-primary font-sans antialiased;
+}
+
+.ag-theme-alpine {
+  --ag-background-color: #ffffff;
+  --ag-header-background-color: #eef2f6;
+  --ag-odd-row-background-color: #fafafa;
+  --ag-border-color: #e5eaf0;
+  --ag-font-family: Inter, Segoe UI, system-ui, sans-serif;
+  --ag-font-size: 12px;
+}
